@@ -3,8 +3,8 @@ scalar DateTime
 
 
 type Query {
-    getAllYSers: [User]
-    getById(id: ID!): User
+    getAllUsers: [User]
+    getUserById(id: ID!): User
 
 }
 
