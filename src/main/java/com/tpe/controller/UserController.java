@@ -53,6 +53,16 @@ public class UserController {
         return userService.createUser(id);
 
     }
-
+/*
+    * facb. tarafindan gelistiriliyor. Tek bir entpointimiz var. Bu tek entpoint uzerinden istekelrimizi atiyoruz
+    * /GraphQL diye bir entpointimiz var. neyi almak istiyorsak ordan talep[ ediyoruz
+    * normalde frontenfdin istedfiginden fazla veri gonderme durumlarina karsin grapHQL cok mantikli
+    * GraphQL de bana sadece bu field lazim diuorsun o geliyor. daha fazla field e gerek kalmiyor. datalar JSON geliyor tabi
+    * Query ile get yapacagimiz datalari kullaniriz
+    * Mutation ile datayi degistirmek guncellemek icin post put
+    * Subscription ile akisa alinip surekli gelecek bir data iicin kullaniyoruz.
+    * Bu uygulama da Query ve Mutation uzerinde duracagiz.
+    *
+ */
 
 }
