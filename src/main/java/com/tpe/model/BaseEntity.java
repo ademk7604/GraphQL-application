@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
 @SuperBuilder
 @MappedSuperclass
 public abstract class BaseEntity {
-    // abstract, direk instance uretilmesin diye
+    // abstract, direk instance uretilmesin diye. buna extends edilen classlardan instance uretilsin
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

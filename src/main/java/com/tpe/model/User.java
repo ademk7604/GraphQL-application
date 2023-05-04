@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Entity(name = "`user`")
 public class User extends BaseEntity {
-    //h2 db de user -> reserved oldugu icin bektik icinde kullandik, kizmamasi icin :)
+    //h2 db de user -> reserved oldugu icin backtik icinde kullandik, kizmamasi icin :)
 
     private String username;
     private String mail;

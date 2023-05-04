@@ -1,20 +1,21 @@
 scalar DateTime
-
+#bunu kod kisminda da configura etmemiz gerekiyor
 
 
 type Query {
-    getAllUsers: [User]
-    getUserById(id: ID!): User
+    getAllUsers: [User]         # bir liste doncurecekse [] icinde yapmamiz ferekiyor
+    getUserById(id: ID!): User  # ! soru isareti zorunlu olmasi gerekir anlamina gelior.
 
 }
 
 type Mutation{
-    createUser(userRequest: UserRequest!): User
+    createUser(userRequest: UserRequest!): User # UserRequest alip donusumu ise User olarak donecegiz
     updateUser(userRequest: UserRequest!): User
-    deleteUser(id:ID!) : Boolean
+    deleteUser(id:ID!) : Boolean                # void birsey dondureceksek bu sekilde Boolean donduruyoruz
 
 }
-
+# Graphql, bazi(LocaleDate) type lari varsayilan olarak desteklemiyor.
+# bunun icin onlari scalar olarak kendimiz olusturmamiz gerekiyor. kastim typlar oluyor bunlar. Yukarida
 type User {
     id: ID
     created: LocaleDate
@@ -28,7 +29,7 @@ enum Role {
     ADMIN
     USER
 }
-
+#input olarak alacagimiz bir sey oldugu icin input yaptik
 input UserRequest {
     id: ID
     username: String

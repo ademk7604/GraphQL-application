@@ -50,7 +50,7 @@ public class UserController {
 
     @MutationMapping
     Boolean deleteUser(@Argument Long id ){
-        return userService.createUser(id);
+        return userService.deleteUser(id);
 
     }
 /*

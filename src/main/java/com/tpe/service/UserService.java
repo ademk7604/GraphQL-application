@@ -10,6 +10,7 @@ import java.util.List;
 @Service
 public class UserService {
 
+    //Constructer basic injecktion da yaptik
     private final UserRepository userRepository;
 
     public UserService(UserRepository userRepository) {
@@ -32,13 +33,17 @@ public class UserService {
                 .mail(userRequest.getMail())
                 .role(userRequest.getRole())
                 .build();
-
-
-        return respository.save(user);
+        return userRepository.save(user);
     }
 
     public User updateUser(UserRequest userRequest) {
+        User existing = getUserById(userRequest.getId());
+        existing.setRol(userRequest.getRol());
+        existing.setUsername(userRequest.getUsername());
+        existing.setMail(userRequest.getMail());
+        return userRepository.save(existing);
+    }
 
-        return null;
+    public Boolean deleteUser(Long id) {
     }
 }
