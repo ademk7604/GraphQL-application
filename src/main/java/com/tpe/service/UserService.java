@@ -31,7 +31,7 @@ public class UserService {
                 User.builder()
                 .username(userRequest.getUsername())
                 .mail(userRequest.getMail())
-                .role(userRequest.getRole())
+                .rol(userRequest.getRol())
                 .build();
         return userRepository.save(user);
     }
@@ -44,6 +44,8 @@ public class UserService {
         return userRepository.save(existing);
     }
 
-    public Boolean deleteUser(Long id) {
+    public void deleteUser(Long id) {
+        User existing = getUserById(id);
+        userRepository.delete(existing);
     }
 }

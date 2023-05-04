@@ -32,7 +32,7 @@ public class UserController {
 
     @QueryMapping
     User getUserById(@Argument Long id){
-        return userService.getUserById();
+        return userService.getUserById(id);
 
     }
 
@@ -50,7 +50,8 @@ public class UserController {
 
     @MutationMapping
     Boolean deleteUser(@Argument Long id ){
-        return userService.deleteUser(id);
+       userService.deleteUser(id);
+       return true;
 
     }
 /*
