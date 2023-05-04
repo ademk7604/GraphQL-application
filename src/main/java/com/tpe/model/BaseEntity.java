@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import java.time.OffsetDateTime;
 
-import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,12 +24,10 @@ public abstract class BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @CreationTimestamp
-    private LocalDateTime created;
+    @CreationTimestamp private OffsetDateTime created;
     // LocalDateTime da hatalarla karsilasacagiz cozumleri de olacak
 
-    @UpdateTimestamp
-    private LocalDateTime updated;
+    @UpdateTimestamp private OffsetDateTime updated;
 
 
 

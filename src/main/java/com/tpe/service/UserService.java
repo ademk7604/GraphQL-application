@@ -1,5 +1,6 @@
 package com.tpe.service;
 
+import com.tpe.exception.UserNotFoundException;
 import com.tpe.model.User;
 import com.tpe.model.UserRequest;
 import com.tpe.repository.UserRepository;
@@ -23,7 +24,7 @@ public class UserService {
 
     public User getUserById(Long id) {
         return userRepository.findById(id)
-                .orElseThrow(()-> new RuntimeException("user not found!"));
+                .orElseThrow(()-> new UserNotFoundException("user not found!"));
     }
 
     public User createUser(UserRequest userRequest) {
@@ -31,14 +32,14 @@ public class UserService {
                 User.builder()
                 .username(userRequest.getUsername())
                 .mail(userRequest.getMail())
-                .rol(userRequest.getRol())
+                .role(userRequest.getRole())
                 .build();
         return userRepository.save(user);
     }
 
     public User updateUser(UserRequest userRequest) {
         User existing = getUserById(userRequest.getId());
-        existing.setRol(userRequest.getRol());
+        existing.setRole(userRequest.getRole());
         existing.setUsername(userRequest.getUsername());
         existing.setMail(userRequest.getMail());
         return userRepository.save(existing);

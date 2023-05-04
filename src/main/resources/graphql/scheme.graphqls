@@ -18,8 +18,8 @@ type Mutation{
 # bunun icin onlari scalar olarak kendimiz olusturmamiz gerekiyor. kastim typlar oluyor bunlar. Yukarida
 type User {
     id: ID
-    created: LocaleDate
-    updated: LocaleDate
+    created: DateTime
+    updated: DateTime
     username: String
     mail: String
     role:Role

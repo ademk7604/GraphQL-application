@@ -8,5 +8,5 @@ public class UserRequest {
     private Long id;
     private String username;
     private String mail;
-    private Role rol;
+    private Role role;
 }
