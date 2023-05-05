@@ -66,8 +66,6 @@ class UserControllerTest {
     }
 
 
-
-
     @Test
     void  createUser(User user){
         String mutation = """
